@@ -192,3 +192,121 @@ console.log(`Highest number: ${Math.max(...numbers)})
 // arr2[0] = 10
 // console.log(`arr1:`, arr1)
 // console.log(`arr2:`, arr2)
+
+//Escape Character:  allows for adjustments to be made to code or string 
+
+// console.log('Our lecturer's name is Joel.') will give an error. To fix use an escape character
+// console.log('Our lecturer\'s name is Joel.') This will display the message: Our lecturer's name is Joel.
+/* 
+  Escape Characters
+\' : Including a single quote in a string
+\" : Double quote
+\\ : backslash
+\n : Newline
+\r : Carriage return
+\t : Tab
+\b : Word boundary
+\f : form feed
+*/
+
+// Immediately call a function
+// Standard way to make and call a function
+// function addition(numb1, numb2) {
+//     console.log(numb1 + numb2)
+// }
+// addition(4, 2)
+
+// Immediately call a function
+// (function addition(numb1, numb2){
+//     console.log(numb1 + numb2)
+// })(4, 2)
+
+// Recursive Function: A function that calls itself and creates a loop.
+// function loop(cnt, limit) {
+//     if (cnt > limit) {
+//         return
+//     } else {
+//         console.log(cnt)
+//         loop(cnt + 1, limit)
+//     }
+// }
+// loop(0, 10) 
+
+// function repeat(cnt, limit) {
+//     if(cnt < limit) {
+//         return
+//     } else {
+//         console.log(cnt) 
+//         repeat(cnt - 1, limit)
+//     }
+// }
+// repeat(10, 1)
+
+//Do while Loop
+// let numbers = [9, 11, 12, 34]
+// let cnt = 0
+// do { 
+//     console.log(numbers[cnt])
+//     cnt++
+// } while (cnt < numbers.length)
+
+//Factory Function: A function that creates an object and returns the object. Function name must be in camel-case
+    //Before making use of factory function   
+// let person1 = {
+    //     firstName: 'John',
+    //     lastName: 'Peter'
+    // }
+    // let person2 = {
+    //     firstName: 'Mustafa',
+    //     lastName: 'Moerat'
+    // }
+
+//Factory function for example above
+// function personDetails(name, surname) {
+//     return {
+//         firstName: name,
+//         lastName: surname
+//     }
+// }
+// let person1 = personDetails('Mustafa', 'Moerat')
+// let person2 = personDetails('Qaasiem', 'Harliem')
+// console.table(person1)
+// console.table(person2)
+
+//Short version of hte code above
+// function personDetails(firstName, lastName) {
+//     return {firstName, lastName}
+// }
+// let person1 = personDetails('Mustafa', 'Moerat')
+// let person2 = personDetails('Qaasiem', 'Harliem')
+// console.table(person1)
+// console.table(person2)
+
+//  Constructor Function: Funciton name must be in Pascal case. Requires the use of the keyword this & new when passing arguements. 
+// function PersonDetails(name, surname, age) {
+//     this.firstName = name
+//     this.lastName = surname
+//     this.age = age 
+// }
+// let person1 = new PersonDetails('Muzzamil', 'Charles', 23)
+// let person2 = new PersonDetails('Abdus-Sammad', 'Charles', 24)
+// console.table(person1)
+// console.table(person2)
+
+// function personDetails(firstName, lastName) {
+//     return {
+//         firstName,
+//         lastName,
+//         display() {
+//             console.log(
+//                 `First name: ${firstName}\n Last Name: ${lastName}`
+//             )
+//         }
+//     }
+// }
+// let person1 = personDetails('Mustafa', 'Moerat')
+// let person2 = personDetails('Qaasiem', 'Harliem')
+// console.table(person1)
+// person1.display()
+// person2.display()
+
