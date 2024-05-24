@@ -310,3 +310,38 @@ console.log(`Highest number: ${Math.max(...numbers)})
 // person1.display()
 // person2.display()
 
+/* 
+Promise Object: Supports 2 states, state and result. pending indicates its result is undefined. fulfilled indicates its result is an object. rejected indicates its result is an error. 
+fetch() performs a function to get data from the internet. A request.
+.then()
+async function: function a and b can happen at the same time independent of each other.
+sync function: requires 1 function to be completed before the other can begin.
+response: 
+await: collects data that is ready.
+*/
+
+async function fetchData() {
+    let response = await fetch('https://randomuser.me/api/?results=50')
+    let data = await response.json()
+    return data
+}
+
+let wrapper = document.querySelector('[wrapper]')
+
+let wrapper = document.querySelector('[wrapper]')
+async function displayData() {
+    let data = await fetchData()
+    let results = await data.results
+    results.forEach((data) => {
+        wrapper.innerHTML += `
+            <div class='car'>
+                <img src='${data.picture.large}' alt='${data.name.first}' loading="lazy">
+                <p>
+                    <span>${data.name.title}</span>
+                    <span>${data.name.first} ${data.name.last}</span>
+                </p>
+            </div>
+        `
+    })
+}
+displayData()
